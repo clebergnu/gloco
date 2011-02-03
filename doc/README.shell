@@ -1,0 +1,45 @@
+README.shell
+============
+Author: Cleber Rosa <cleber@tallawa.org>
+
+This document describes gloco.shell.Shell, a interactive command line
+interpreter, somewhat compatible with python's standard cmd.Cmd.
+
+RATIONALE:
+==========
+
+gloco's Shell is exists to fulfill the GMSFN principle, it adds value
+without requiring you the pay the price. For the most part, you can use
+just like you use cmd.Cmd. If gloco is available, you get the added value,
+but if not, your application will run (not as great as it could, though ;)
+
+Most applications do this:
+
+...
+try:
+    from gloco.shell import Shell
+except ImportError:
+    from cmd import Cmd as Shell
+
+class SomeInterpreter(Shell):
+   Shell.__init__(self)
+...
+
+We haven't ran into compatibility issues so far. If you do, please let us
+know about them.
+
+Implementation details:
+=======================
+
+cmdloop():
+----------
+
+   * To stop the loop, set stop to something that is eval'd as True
+   * To set new commands to be executed, append commands to cmdqueue list,
+     which is looked up before each loop iteration
+   * There's a class switch, called use_rawinput which controls whether 
+     raw_input() or self.stdin.readline() is used. Prefer to use raw_input, 
+     as it gives you readline functionality (assuming readline is available)
+   * Integrate application functionality: should we create do_* methods or
+     reimplement a way of looking up functionailty?
+   * Shell should be useful with and without gloco.functionality

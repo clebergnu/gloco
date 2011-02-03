@@ -1,0 +1,44 @@
+README.philosophy
+=================
+Author: Cleber Rosa <cleber@tallawa.org>
+
+This documents describes the set of ideas, principles and goals which guide
+the development of gloco.
+
+PRINCIPLES:
+===========
+Principles are just that: things we believe in and try to follow to the
+largest extent possible.
+
+The DRY principle:
+------------------
+The `Dont Repeat Yourself` principle is nowadays very widespread and popular.
+Believe it or not, that doesn't mean it's buzz, it's a darned wise thing
+instead. 
+
+You can read more about it at http://c2.com/cgi/wiki?DontRepeatYourself
+
+
+The GMSFN principle:
+--------------------
+The `Give Most Stuff For Nothing` principle, which I've just created, means
+that gloco wants to give away the biggest amount of functionality, without 
+charging the the programmer a single pennie of extra or unecessary code.
+
+While using gloco, you should feel you're getting a heck of a deal, instead
+of feeling like being exploited to death.
+
+
+The UDS principle:
+------------------
+The `Use the Defaults, Stupid` principle, which also seems to have born
+right here and right now, is closely connected to the DRY principle. Instead
+of asking for information time after time, just go on with the default
+choice, which probably make the most sense. But listen, the UDS principle
+respects your choice, and you're free to override the defaults.
+
+GOALS:
+======
+   * Give away smart I18N and L10N for applications
+   * Give away smart packaging of applications
+   * Enable the use of application functionality in a frontend agnostic way

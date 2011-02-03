@@ -1,0 +1,86 @@
+README.functionality
+====================
+Author: Cleber Rosa <cleber@tallawa.org>
+
+This is an attempt to create a standard way to access a application functionality.
+Three modes are initially provisioned to expose this functionality:
+
+   * Command line options
+   * Command line shell
+   * GUI Menus
+
+Here follows a larger description/examplification of each mode:
+
+COMMAND LINE OPTIONS:
+---------------------
+
+This mode allows for the calling of application functionality by using command
+line options. 
+
+Sample usage:
+
+   # sample_app --help|-h
+   # sample_app --version|-v
+   # sample_app --jump --times=10
+
+
+COMMAND LINE SHELL:
+-------------------
+
+This mode presents an interactive shell that allows for the aided calling of
+application functionality. Auto-completion and on-line help are some of the
+planned features.
+
+   sample_app>    sample_app> version
+   sample_app> jump times=10
+   sample_app> ?
+   help version jump
+
+   sample_app> help jump
+   Help on jump:
+   =============
+   Jumps the number of times you specify
+
+   Syntax: jump <times=> <number_of_times>
+
+
+GUI MENUS
+---------
+
+This modes presents the application funcionality on a GUI Windows, through the
+use of menus. The parameters of these will be prompted on dialogs. This will
+make use of higwidgets standard dialogs.
+
+
+IMPLEMENTATION DETAILS:
+=======================
+
+There are many details which should be dealt with in order to obtain this level
+of functionality exposure. The functionality system should know about a 
+function's:
+
+   * Name
+   * Help
+   * Syntax/Parameters
+
+When it comes to the function's syntax/parameters, some information is also
+required:
+
+   * Number of parameters
+   * Name of each parameters
+   * Default parameter value
+   * Whether parameter is required or optional
+
+Optionally,
+
+   * Argument type
+   * Argument help
+
+To follow the GMSFN principle, gloco gets as most information as possible from
+the real objects, by using introspection. To hold all this introspection 
+information, plus extra (optional) information, a custom class is used.
+
+
+SYNTAX:
+-------
+
